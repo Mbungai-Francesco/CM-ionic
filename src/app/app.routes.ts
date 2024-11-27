@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
+    path: 'course-form',
+    loadComponent: () => import('./course-form/course-form.component').then((m) => m.CourseFormComponent),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',

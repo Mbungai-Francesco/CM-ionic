@@ -1,20 +1,18 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <div class="px-4 text-2xl font-semibold"><h1>CM</h1></div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="w-full h-full space-y-1">
+    <div class="h-[60vh] w-full overflow-y-scroll px-2">
+      @for (item of courses; track $index) {
+        <app-course [course]="item"/>
+      }
+    </div>
+    <div class="w-full bg-gray-200 flex justify-center items-center">
+      <ion-button routerLink="/course-form">Load More</ion-button>
+    </div>
   </div>
 </ion-content>
